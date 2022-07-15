@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1657851974 source:e:\carpetas\c++\integradorv4\main.cpp
+	<iostream>
+	"definitions.h"
+	"utils.h"
+	"constants.h"
+	"game.h"
+
+1657851998 e:\carpetas\c++\integradorv4\utils.h
+	<string>
+	"definitions.h"
+	"constants.h"
+	"game.h"
+
+1657850724 e:\carpetas\c++\integradorv4\constants.h
+	<string>
+
+1657849802 e:\carpetas\c++\integradorv4\game.h
+	"definitions.h"
+	"constants.h"
+	"utils.h"
+
+1657849897 e:\carpetas\c++\integradorv4\definitions.h
+	"string.h"
+	"constants.h"
+
+1657851846 source:e:\carpetas\c++\integradorv4\utils.cpp
+	"utils.h"
+	"rlutil.h"
+	"constants.h"
+	<cmath>
+
+1656031872 e:\carpetas\c++\integradorv4\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1657851481 source:e:\carpetas\c++\integradorv4\gameutils.cpp
+	"gameUtils.h"
+	<map>
+
+1657851219 e:\carpetas\c++\integradorv4\gameutils.h
+	<iostream>
+	"definitions.h"
+	"constants.h"
+	"utils.h"
+
+1657851049 source:e:\carpetas\c++\integradorv4\game.cpp
+	<iostream>
+	"game.h"
+	"constants.h"
+	"utils.h"
+	"rlutil.h"
+	"gameUtils.h"
+
