@@ -1,7 +1,6 @@
 #include "utils.h"
 #include "rlutil.h"
 #include "constants.h"
-#include <cmath>
 
 using namespace rlutil;
 
@@ -86,23 +85,12 @@ void keyForContinue(string text) {
 
 }
 
-string showScore(const Player& player) {
-    return player.name + ": tiene " + to_string(player.truffles) + " trufas";
-}
+int askMenu() {
+    newScreen();
 
-void printCurrentRoundStats(Player player, Player notPlayer, int currentRound, int playersQuantity, int trufflesRoundQuantity, int throwsRoundQuantity) {
+    cout << MENU;
 
-        cout << showScore(player) <<
-            "\t" << showScore(notPlayer) << "\n";
-
-        cout << "TURNO DE " << player.name << "\n";
-
-        cout << "+-------------------------+\n";
-        cout << "| RONDAS #" << ceil(currentRound / playersQuantity) << "               |\n";
-        cout << "| TRUFAS DE LA RONDA: "<< trufflesRoundQuantity <<"  |\n";
-        cout << "| LANZAMIENTOS: "<< throwsRoundQuantity <<"         |\n";
-        cout << "+-------------------------+\n\n";
-
-        cout << "LANZAMIENTO #" << throwsRoundQuantity + 1 << "\n\n";
-
+    int selectedOption;
+    cin >> selectedOption;
+    return selectedOption;
 }

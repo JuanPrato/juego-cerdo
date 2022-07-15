@@ -14,10 +14,10 @@ void keyForContinue(string text = "");
 
 void Separator();
 
-void printCurrentRoundStats(Player player, Player notPlayer, int currentRound, int playersQuantity, int trufflesRoundQuantity, int throwsRoundQuantity);
-
 int getColSize(int colQuantity);
 
 void printStringCol(string phrase, int size);
+
+int askMenu();
 
 #endif // UTILS_H_INCLUDED

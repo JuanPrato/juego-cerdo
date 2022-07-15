@@ -1,22 +1,12 @@
 #include <iostream>
+#include "constants.h"
 #include "definitions.h"
 #include "utils.h"
-#include "constants.h"
 #include "game.h"
 
 using namespace std;
 
 Best best;
-
-int askMenu() {
-    newScreen();
-
-    cout << MENU;
-
-    int selectedOption;
-    cin >> selectedOption;
-    return selectedOption;
-}
 
 bool isValidOption(int option) {
     int options[] = {0, 1, 2, 3};
@@ -42,7 +32,7 @@ void askNames(string* names) {
 
 void play() {
 
-    string names[2];
+    string names[playerQuantity];
 
     askNames(names);
 
@@ -58,18 +48,18 @@ void play() {
 
     Player *players = finishGame(game);
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < playerQuantity; ++i) {
         if (players[i].name == best.name) {
             best.points += players[i].points;
         }
     }
 
-    if (players[0].points > best.points) {
-        best.name = players[0].name;
-        best.points = players[0].points;
-    } else if (players[1].points > best.points) {
-        best.name = players[1].name;
-        best.points = players[1].points;
+    if (players[PLAYER_1].points > best.points) {
+        best.name = players[PLAYER_1].name;
+        best.points = players[PLAYER_1].points;
+    } else if (players[PLAYER_2].points > best.points) {
+        best.name = players[PLAYER_2].name;
+        best.points = players[PLAYER_2].points;
     }
 
 }
@@ -100,8 +90,6 @@ int main()
 {
  int selectedOption;
 
-    newScreen();
-
     selectedOption = askMenu();
 
     while (selectedOption != 0) {
@@ -122,8 +110,6 @@ int main()
             default:
                 break;
         }
-
-        newScreen();
 
         selectedOption = askMenu();
 

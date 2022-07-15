@@ -1,7 +1,6 @@
 #include "gameUtils.h"
 #include <map>
-
-// GAME UTILITIES
+#include <cmath>
 
 void printResultLine(int size, int points, int quantity, string unit, bool hasUnits = true) {
     string score;
@@ -101,7 +100,7 @@ int getScore(const int* dices, int diceQuantity, bool isOink) {
 
 int nextTurn(int current) {
     if (current == PLAYER_2) return PLAYER_1;
-    return PLAYER_1;
+    return PLAYER_2;
 }
 
 void getMoreTruffles(Player* players, int playerQuantity, int size, const string unit) {
@@ -226,8 +225,8 @@ void getPorky (Player* players, int playerQuantity, int size, const string unit)
             penalization = -1;
         }
 
-        win->truffles += 1;
-        loss->truffles += penalization;
+        win->points += 1;
+        loss->points += penalization;
     }
 
 
@@ -259,5 +258,26 @@ void calcAndPrintCategory(Player* players, int playersQuantity, int category) {
     printCategoryTitle(winCategories[category][0], colsSize);
 
     functions[category](players, playersQuantity, colsSize, winCategories[category][1]);
+
+}
+
+
+string showScore(const Player& player) {
+    return player.name + ": tiene " + to_string(player.truffles) + " trufas";
+}
+
+void printCurrentRoundStats(Player player, Player notPlayer, int currentRound, int playersQuantity, int trufflesRoundQuantity, int throwsRoundQuantity) {
+
+    cout << showScore(player) <<
+        "\t" << showScore(notPlayer) << "\n";
+    cout << "TURNO DE " << player.name << "\n";
+
+    cout << "+-------------------------+\n";
+    cout << "| RONDAS #" << ceil(currentRound / (float)playersQuantity) << "               |\n";
+    cout << "| TRUFAS DE LA RONDA: "<< trufflesRoundQuantity <<"  |\n";
+    cout << "| LANZAMIENTOS: "<< throwsRoundQuantity <<"         |\n";
+    cout << "+-------------------------+\n\n";
+
+    cout << "LANZAMIENTO #" << throwsRoundQuantity + 1 << "\n\n";
 
 }

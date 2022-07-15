@@ -10,13 +10,13 @@ using namespace rlutil;
 
 void startGame(Game *game, string names[]) {
 
-    int playerQuantity = game->playerQuantity;
-
     game->players = new Player[playerQuantity];
 
+        cout << playerQuantity;
     for (int i = 0; i < playerQuantity; ++i) {
         game->players[i].name = names[i];
     }
+
 
     Player *players = game->players;
 
@@ -62,7 +62,7 @@ void startGame(Game *game, string names[]) {
 }
 
 bool gameIsOver(Game *game) {
-    return game->currentRound > game->rounds;
+    return game->currentRound > game->rounds * playerQuantity;
 }
 
 void playRoundGame(Game *game) {
@@ -110,7 +110,6 @@ void playRoundGame(Game *game) {
         }
 
         cout << dicesString << "\nSumaste " << trufflesThrow << " trufas!\n\n";
-
         if (keepPlaying) {
             keepPlaying = askKeepPlaying();
         } else {

@@ -18,6 +18,7 @@ struct Game {
     int rounds = 5;
     int playerQuantity = 2;
     Player *players;
+
     int currentTurn = PLAYER_1;
     int currentRound = 1;
 };

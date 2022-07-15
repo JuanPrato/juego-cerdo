@@ -5,6 +5,7 @@
 
 using namespace std;
 
+const int playerQuantity = 2;
 const string DICE_VERTICAL_FACE = "+-------+";
 const string DICE_LATERAL = "|";
 const string NL = "\n";

@@ -28,6 +28,8 @@ int getScore(const int* dices, int diceQuantity, bool isOink);
 
 int nextTurn(int current);
 
+void printCurrentRoundStats(Player player, Player notPlayer, int currentRound, int playersQuantity, int trufflesRoundQuantity, int throwsRoundQuantity);
+
 void calcAndPrintCategory(Player* players, int playerQuantity, int category);
 
 #endif // GAMEUTILS_H_INCLUDED
